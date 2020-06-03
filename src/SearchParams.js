@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 
 const SearchParams = () => {
+  // if (false) {
+  //   const [location, setLocation] = useState("Seattle, WA");
+  // }
   const [location, setLocation] = useState("Seattle, WA"); // That is the default state, and use destructuring here to get two items from that array we got from useState.
   // This is a hook! All hooks begin with 'use'
-  // location: current state; setLocation: an update function for that state - get back a hook always get back an array following this pattern. 
+  // location: current state; setLocation: an update function for that state - get back a hook always get back an array following this pattern.
   // use state create a hook
 
   return (

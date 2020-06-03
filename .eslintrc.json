@@ -1,17 +1,19 @@
 {
   "extends": [
-    "eslint: recommended", //everything is great here
-    "plugin: import/errors",
-    "plugin:react/recommended", // here, there is some disagree stuff, we can question
+    "eslint:recommended",
+    "plugin:import/errors",
+    "plugin:react/recommended",
     "plugin:jsx-a11y/recommended",
     "prettier",
     "prettier/react"
   ],
   "rules": {
-    "react/prop-types": 0,
-    "no-console": 1
+    "react/prop-types": 0, //turn off
+    // "no-console": "warn", // warn
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
   },
-  "plugins": ["react", "import", "jsx-a11y"],
+  "plugins": ["react", "import", "jsx-a11y", "react-hooks"],
   "parserOptions": {
     "ecmaVersion": 2018,
     "sourceType": "module",
@@ -30,4 +32,7 @@
       "version": "detect"
     }
   }
+  //   "eslintConfig": {
+  //     "extends": "react-app"
+  //   }
 }
