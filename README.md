@@ -1,6 +1,5 @@
 ## Follow Brian Holt's course from Frontendmasters, and this is so far the best than all the others.
 
----
 Some notes about setting
 1.  `npm init -y`
 2.  `npm install -D prettier` (or `npm i -D`)
