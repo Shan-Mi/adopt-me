@@ -1,19 +1,25 @@
-import React, { useState, useEffect, useContext } from "react";
-import pet, { ANIMALS } from "@frontendmasters/pet";
+import React, {
+  useState,
+  useEffect,
+  useContext,
+  FunctionComponent,
+} from "react";
+import pet, { ANIMALS, Animal } from "@frontendmasters/pet";
 import Results from "./Results";
 import useDropdown from "./useDropdown";
 import ThemeContext from "./ThemeContext";
+import { RouteComponentProps } from "@reach/router";
 
-const SearchParams = () => {
+const SearchParams: FunctionComponent<RouteComponentProps> = () => {
   const [location, setLocation] = useState("Seattle, WA"); // That is the default state, and use destructuring here to get two items from that array we got from useState.
   // This is a hook! All hooks begin with 'use'
   // location: current state; setLocation: an update function for that state - get back a hook always get back an array following this pattern.
   // use state create a hook
-  const [breeds, setBreeds] = useState([]); //breeds will be an array
+  const [breeds, setBreeds] = useState([] as string[]); // breeds will be an array
   const [animal, AnimalDropdown] = useDropdown("Animal", "dog", ANIMALS);
   // Animal: label; dog: default state; ANIMALS: list of options to choose from
   const [breed, BreedDropdown, setBreed] = useDropdown("Breed", "", breeds);
-  const [pets, setPets] = useState([]);
+  const [pets, setPets] = useState([] as Animal[]);
   const [theme, setTheme] = useContext(ThemeContext);
   // above, it comes back with a setTheme as well, but we are not going to use it so not grab it
 

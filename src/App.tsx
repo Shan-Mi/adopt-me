@@ -1,15 +1,15 @@
-import React, { useState, lazy, Suspense } from "react";
+import React, { useState } from "react";
 import { render } from "react-dom";
 import { Router, Link } from "@reach/router";
-// import SearchParams from "./SearchParams";
-// import Details from "./Details";
+import SearchParams from "./SearchParams";
+import Details from "./Details";
 // delete that, because we don't want Parcel to bundle that details right now.
 import ThemeContext from "./ThemeContext";
 
-const Details = lazy(() => import("./Details"));
+// const Details = lazy(() => import("./Details"));
 // dynamically import, it is a js thing. it is a promise thing
 // Now Details is a placeholder comoponent that will not load this code until later when Details is actually tried to be rendered for the first time.
-const SearchParams = lazy(() => import("./SearchParams"));
+// const SearchParams = lazy(() => import("./SearchParams"));
 
 const App = () => {
   // set some default value
@@ -24,12 +24,11 @@ const App = () => {
           <header>
             <Link to="/">Adopt Me!</Link>
           </header>
-          <Suspense fallback={<h1>loading route...</h1>}>
-            <Router>
-              <SearchParams path="/" />
-              <Details path="/details/:id" />
-            </Router>
-          </Suspense>
+
+          <Router>
+            <SearchParams path="/" />
+            <Details path="/details/:id" />
+          </Router>
         </div>
       </ThemeContext.Provider>
     </React.StrictMode>
