@@ -43,7 +43,7 @@ const SearchParams = () => {
         }}
       >
         <label htmlFor="location">
-          Location
+          Location???
           <input
             id="location"
             value={location}
